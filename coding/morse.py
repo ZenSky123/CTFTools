@@ -18,15 +18,15 @@ def morse2chars(morse):
     return DD.get(morse, ' ')
 
 
-def morse(string):
-    string = str(string)
+def morse(*strings):
+    string = ' '.join(map(str, strings))
     x = string.split(' ')
     ccc = ''.join(x)
     if re.match('^[0-9a-zA-Z]+$', ccc):
         return ' '.join(chars2morse(c) for c in ccc)
     else:
         cc = string.split()
-        return ' '.join(morse2chars(c) for c in cc)
+        return ''.join(morse2chars(c) for c in cc)
 
 
 if __name__ == '__main__':
