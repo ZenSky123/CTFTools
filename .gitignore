@@ -4,3 +4,4 @@ venv
 .idea/*
 *.iml
 coding/.idea
+*.xml
