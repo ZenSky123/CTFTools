@@ -3,7 +3,7 @@ import base64
 import fire
 
 
-def encode(string, encoding='utf-8'):
+def base_encode(string, encoding='utf-8'):
     string = bytes(str(string), encoding)
     b16_res = base64.b16encode(string)
     b32_res = base64.b32encode(string)
@@ -17,7 +17,7 @@ def encode(string, encoding='utf-8'):
     }
 
 
-def decode(string, encoding='utf-8'):
+def base_decode(string, encoding='utf-8'):
     def try_encode(encode_f):
         try:
             return encode_f(string)
@@ -39,6 +39,6 @@ def decode(string, encoding='utf-8'):
 
 if __name__ == '__main__':
     fire.Fire({
-        'encode': encode,
-        'decode': decode
+        'encode': base_encode,
+        'decode': base_decode
     })

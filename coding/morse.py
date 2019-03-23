@@ -1,4 +1,3 @@
-import re
 import fire
 
 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
@@ -18,16 +17,20 @@ def morse2chars(morse):
     return DD.get(morse, ' ')
 
 
-def morse(*strings):
+def morse_encode(*strings):
     string = ' '.join(map(str, strings))
     x = string.split(' ')
     ccc = ''.join(x)
-    if re.match('^[0-9a-zA-Z]+$', ccc):
-        return ' '.join(chars2morse(c) for c in ccc)
-    else:
-        cc = string.split()
-        return ''.join(morse2chars(c) for c in cc)
+    return ' '.join(chars2morse(c) for c in ccc)
+
+
+def morse_decode(*strings):
+    strings = map(str, strings)
+    return ''.join(morse2chars(c) for c in strings)
 
 
 if __name__ == '__main__':
-    fire.Fire(morse)
+    fire.Fire({
+        'encode': morse_encode,
+        'decode': morse_decode
+    })
