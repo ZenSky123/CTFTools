@@ -2,7 +2,7 @@ import fire
 
 
 def caesar_decode(string):
-    string = string.lower()
+    string = str(string).lower()
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     res = {}
     for offset in range(26):
