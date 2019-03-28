@@ -5,3 +5,5 @@ venv
 *.iml
 coding/.idea
 *.xml
+extension/*
+tmp.py
