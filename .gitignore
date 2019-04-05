@@ -6,4 +6,4 @@ venv
 coding/.idea
 *.xml
 extension/*
-tmp.py
+tmp/*
