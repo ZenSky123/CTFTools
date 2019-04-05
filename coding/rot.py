@@ -2,8 +2,8 @@ import codecs
 import fire
 
 
-def rot_decode(string):
-    string = str(string)
+def rot_decode(*strings):
+    string = ' '.join(map(str, strings))
     return codecs.encode(string, 'rot-13')
 
 

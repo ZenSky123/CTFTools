@@ -1,7 +1,8 @@
 import fire
 
 
-def caesar_decode(string):
+def caesar_decode(*strings):
+    string = ' '.join(map(str, strings))
     string = str(string).lower()
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
     res = {}

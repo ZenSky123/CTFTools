@@ -1,7 +1,8 @@
 import fire
 
 
-def fence_decode(string):
+def fence_decode(strings):
+    string = ' '.join(map(str, strings))
     res = {}
     for n in range(2, len(string) - 1):
         ans = ''

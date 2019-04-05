@@ -3,7 +3,8 @@ import base64
 import fire
 
 
-def base_encode(string, encoding='utf-8'):
+def base_encode(*strings, encoding='utf-8'):
+    string = ' '.join(map(str, strings))
     string = bytes(str(string), encoding)
     b16_res = base64.b16encode(string)
     b32_res = base64.b32encode(string)
@@ -17,12 +18,14 @@ def base_encode(string, encoding='utf-8'):
     }
 
 
-def base_decode(string, encoding='utf-8'):
+def base_decode(*strings, encoding='utf-8'):
     def try_encode(encode_f):
         try:
             return encode_f(string)
         except:
             return None
+
+    string = ' '.join(map(str, strings))
 
     string = bytes(str(string), encoding)
     b16_res = try_encode(base64.b16decode)

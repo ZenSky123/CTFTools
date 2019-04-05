@@ -1,7 +1,8 @@
 import fire
 
 
-def peigen_encode(text):
+def peigen_encode(*strings):
+    text = ' '.join(map(str, strings))
     result = ''
     for i in text:
         result += '{0:05b}'.format(ord(i) - ord('a'))
@@ -14,7 +15,8 @@ def peigen_encode(text):
     return res
 
 
-def peigen_decode(text):
+def peigen_decode(*strings):
+    text = ' '.join(map(str, strings))
     text = text.replace('A', '0').replace('B', '1')
     result = ''
     for i in range(0, len(text), 5):
